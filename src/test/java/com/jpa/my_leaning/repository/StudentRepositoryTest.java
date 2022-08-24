@@ -28,8 +28,8 @@ class StudentRepositoryTest {
 
 
         Student student = Student.builder()
-                .emailId("po@sd.com")
-                .firName("Tanya")
+                .emailId("pkdkd@sd.com")
+                .firstName("Tanya")
                 .lastName("mab")
                 .guardian(guardian)
                 .build();
@@ -37,7 +37,33 @@ class StudentRepositoryTest {
     }
     @Test
     public void getAllStudents(){
-        List<Student> allStudents = studentRepository.findAll();
+        List<Student> allStudents = studentRepository.findAll  ();
         System.out.println("allStudents = " + allStudents);
+    }
+    
+    @Test
+    public void getStudentByFirstNameContaining(){
+        List<Student> student = studentRepository.findByFirstNameContaining("t");
+
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void getByFirstName(){
+        List<Student> student = studentRepository.findByFirstName("tinashe");
+
+        System.out.println("student = " + student);
+    }
+    
+    @Test
+    public void getStudentsByLastNameEndWith(){
+        List<Student> students = studentRepository.findByLastNameEndingWith("ab");
+        System.out.println("students = " + students);
+    }
+
+    @Test
+    public void findByFirstAndLastName(){
+        Student student = studentRepository.findByFirstNameAndLastName("Tinashe","mab");
+        System.out.println("student = " + student);
     }
 }

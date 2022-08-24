@@ -28,7 +28,7 @@ public class Student {
     )
 
     private Long studentId;
-    private String firName;
+    private String firstName;
     private String lastName;
 
     @Column(
