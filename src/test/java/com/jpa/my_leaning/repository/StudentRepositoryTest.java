@@ -9,10 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 //@DataJpaTest creates test and wont affect the database
-@SpringBootTest @Slf4j
+@SpringBootTest
 class StudentRepositoryTest {
 
     @Autowired
@@ -64,6 +62,18 @@ class StudentRepositoryTest {
     @Test
     public void findByFirstAndLastName(){
         Student student = studentRepository.findByFirstNameAndLastName("Tinashe","mab");
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void getByCustomEmailQuery(){
+        Student student = studentRepository.findStudentByEmailAddress("p@sd.com");
+        System.out.println("student = " + student);
+    }
+
+    @Test
+    public void getStudentFirstNameByEmail(){
+        String student = studentRepository.getStudentFirstNameByEmailAddress("p@sd.com");
         System.out.println("student = " + student);
     }
 }

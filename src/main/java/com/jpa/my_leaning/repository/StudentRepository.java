@@ -2,6 +2,7 @@ package com.jpa.my_leaning.repository;
 
 import com.jpa.my_leaning.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
@@ -16,5 +17,11 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
      List<Student> findByLastNameEndingWith(String filter);
 
      Student findByFirstNameAndLastName(String firstName, String LastName);
+
+     @Query("select student from Student student where student.emailId = ?1" )
+     Student findStudentByEmailAddress(String email);
+
+     @Query("select student.firstName from Student student where student.emailId = ?1")
+     String getStudentFirstNameByEmailAddress(String email);
 
 }
