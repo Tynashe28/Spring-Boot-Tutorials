@@ -28,7 +28,7 @@ import javax.persistence.Embeddable;
                 name = "mobile",
                 column= @Column(
                         name = "guardian_mobile"
-        )
+                )
         )
 
 })

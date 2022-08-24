@@ -26,7 +26,6 @@ public class Student {
             strategy = GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
-
     private Long studentId;
     private String firstName;
     private String lastName;

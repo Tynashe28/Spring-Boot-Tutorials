@@ -27,11 +27,11 @@ public class CourseMaterial {
     private Long courseMaterialId;
     private String url;
 
-    //This.class->object cannot exist with course obj
+    //This.class->object cannot exist without course obj
     @OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false // when saving a course, course material is required, This is crazy though 😂😂
+            cascade = CascadeType.ALL
+           // fetch = FetchType.EAGER,
+           // optional = false // when saving a course, course material is required, This is crazy though 😂😂
     )
     @JoinColumn(
             //This Entity will have an extra column for the courseId
