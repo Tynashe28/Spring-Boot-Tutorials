@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-//@DataJpaTest creates test and wont affect the database
+//@DataJpaTest creates test and won't affect the database
 @SpringBootTest
 class StudentRepositoryTest {
 
@@ -92,5 +92,41 @@ class StudentRepositoryTest {
     @Test
     public void updateStudentNameByEmail(){
         studentRepository.updateStudentFirstNameByEmail("BlackCode","p@sd.com");
+    }
+
+    @Test
+    void findByFirstName() {
+    }
+
+    @Test
+    void findByFirstNameContaining() {
+    }
+
+    @Test
+    void findByLastNameEndingWith() {
+    }
+
+    @Test
+    void findByFirstNameAndLastName() {
+    }
+
+    @Test
+    void findStudentByEmailAddress() {
+    }
+
+    @Test
+    void getStudentFirstNameByEmailAddress() {
+    }
+
+    @Test
+    void nativeFindStudentByEmailAddress() {
+    }
+
+    @Test
+    void nativeGetStudentFirstNameByEmailAddress() {
+    }
+
+    @Test
+    void updateStudentFirstNameByEmail() {
     }
 }
